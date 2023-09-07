@@ -1,0 +1,40 @@
+<p *ngIf="mostrarNome else naoMostrar">Joelinton</p>
+<ng-template #naoMostrar>
+  <p>Camargo</p>
+</ng-template>
+
+<hr>
+
+<p>Interação</p>
+<p *ngFor="let item of list; let i = index" (click)="handleClick(i)">[{{i}}] = {{item}}</p>
+<p *ngFor="let item of list2">nome: {{item.nome}} idade: {{item.idade}}</p>
+
+<button (click)="adicionarNome()">Adicionar nome</button>
+
+<hr>
+
+<p>NG SWITCH</p>
+<input type="text" [(ngModel)]="nome2">
+
+<div [ngSwitch]="nome2">
+  <p *ngSwitchCase="'gabriel'">Gabriel</p>
+  <p *ngSwitchCase="'clara'">Clara</p>
+  <p *ngSwitchDefault>nenhum desses nomes servem</p>
+</div>
+
+<hr>
+
+
+<p ngClass="active">testinho</p>
+<p [ngClass]="{'active': value, 'disabled': !value}">testinho2</p>
+<button (click)="handleChange()">change color</button>
+
+<p [ngStyle]="{'height': altura, 'background': 'green'}">testinho3</p>
+
+<hr>
+
+<p>NG MODEL</p>
+
+<input type="text" [(ngModel)]="nome3">
+<button (click)="adicionarNomeLista3()">add to list</button>
+<p *ngFor="let item of list3">{{item.nome}}</p>
