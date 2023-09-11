@@ -10,6 +10,8 @@ export class RendersComponent implements AfterContentInit, AfterContentChecked {
 
   public number: number = 4
   public mostrar: boolean = true
+  public date: any = new Date()
+
 
   adicionar(){
     this.number += 1

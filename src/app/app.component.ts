@@ -3,15 +3,36 @@ import { Component, DoCheck, AfterContentInit, AfterContentChecked, AfterViewIni
 @Component({
   selector: 'app-root',
   template: `
+    <app-new-component></app-new-component>
     <app-data-biding></app-data-biding>
     <app-renders></app-renders>
     <router-outlet></router-outlet>
-    <app-diretivas></app-diretivas>
+    <app-diretivas>
+      <h1>test</h1>
+    </app-diretivas>
+    <button (click)="addNumero()">vou fazer um teste</button>
+    <app-input [numerin]="numerinAdd"></app-input>
+    <app-output (sendData)="teste($event)"></app-output>
+    <ng-template [ngIf]="osDados">
+      <p>{{osDados.nome}}-{{osDados.idade}}</p>
+    </ng-template>
+
   `
 })
 export class AppComponent implements OnInit {
 
+  public numerinAdd: number = 5
+  public osDados: {nome: string, idade: number} | undefined
+
   constructor() {}
+
+  teste(e: any){
+    this.osDados = e
+  }
+
+  addNumero(){
+    this.numerinAdd += 1
+  }
 
   ngOnInit(): void {
 

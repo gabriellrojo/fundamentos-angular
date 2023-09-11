@@ -7,6 +7,8 @@ import { DataBidingComponent } from './data-biding/data-biding.component';
 import { RendersComponent } from './renders/renders.component';
 import { DiretivasComponent } from './diretivas/diretivas.component';
 import { FormsModule } from '@angular/forms';
+import { NewComponentComponent } from './shared/new-component/new-component.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,4 @@
+<ng-content select="h1"></ng-content>
 <p *ngIf="mostrarNome else naoMostrar">Joelinton</p>
 <ng-template #naoMostrar>
   <p>Camargo</p>
@@ -7,7 +8,7 @@
 
 <p>Interação</p>
 <p *ngFor="let item of list; let i = index" (click)="handleClick(i)">[{{i}}] = {{item}}</p>
-<p *ngFor="let item of list2">nome: {{item.nome}} idade: {{item.idade}}</p>
+<p *ngFor="let item of list2">nome: {{item.nome | uppercase}} idade: {{item.idade}}</p>
 
 <button (click)="adicionarNome()">Adicionar nome</button>
 
@@ -29,7 +30,7 @@
 <p [ngClass]="{'active': value, 'disabled': !value}">testinho2</p>
 <button (click)="handleChange()">change color</button>
 
-<p [ngStyle]="{'height': altura, 'background': 'green'}">testinho3</p>
+<!-- <p [ngStyle]="{'height': altura, 'background': 'green'}">testinho3</p> -->
 
 <hr>
 
@@ -38,3 +39,5 @@
 <input type="text" [(ngModel)]="nome3">
 <button (click)="adicionarNomeLista3()">add to list</button>
 <p *ngFor="let item of list3">{{item.nome}}</p>
+
+<ng-content></ng-content>
