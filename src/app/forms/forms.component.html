@@ -1,0 +1,29 @@
+<h1>Formulários</h1>
+
+<form #form="ngForm" (ngSubmit)="submit(form.valid)">
+  <label>Nome:</label>
+  <input type="text" name="nome" ngModel required>
+  <p>Sexo:</p>
+  <label>Masculino</label>
+  <input type="radio" name="sexo" value="masculino" ngModel>
+  <label>Feminino</label>
+  <input type="radio" name="sexo" value="feminino" ngModel>
+  <p>Stacks</p>
+  <label>React</label>
+  <input type="checkbox" name="react"  ngModel>
+  <label>Angular</label>
+  <input type="checkbox" name="angular" ngModel>
+  <label>Vue</label>
+  <input type="checkbox" name="vue" ngModel>
+  <p>Turno:</p>
+  <select name="turno" ngModel>
+    <option value="">Selecione uma opção</option>
+    <option *ngFor="let item of list">{{item.turno}}</option>
+  </select>
+  <button [disabled]="!form.valid" >Submit</button>
+</form>
+
+{{ form.value | json }}
+
+<!-- text, radio, checkbox-->
+

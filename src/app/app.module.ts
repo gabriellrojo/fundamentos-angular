@@ -9,6 +9,8 @@ import { DiretivasComponent } from './diretivas/diretivas.component';
 import { FormsModule } from '@angular/forms';
 import { NewComponentComponent } from './shared/new-component/new-component.component';
 import { SharedModule } from './shared/shared.module';
+import { FormsComponent } from './forms/forms.component';
+
 
 @NgModule({
   declarations: [
@@ -16,6 +18,7 @@ import { SharedModule } from './shared/shared.module';
     DataBidingComponent,
     RendersComponent,
     DiretivasComponent,
+    FormsComponent
   ],
   imports: [
     BrowserModule,

@@ -16,6 +16,10 @@ import { Component, DoCheck, AfterContentInit, AfterContentChecked, AfterViewIni
     <ng-template [ngIf]="osDados">
       <p>{{osDados.nome}}-{{osDados.idade}}</p>
     </ng-template>
+    <app-add-food></app-add-food>
+    <app-food-list></app-food-list>
+    <app-forms></app-forms>
+
 
   `
 })
